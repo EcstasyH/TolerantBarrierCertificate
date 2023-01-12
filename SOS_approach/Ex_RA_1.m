@@ -1,4 +1,4 @@
-function [f, S0, Su, St, Sd, dmin, dmax] = RA_Ex_1(x,y,d)
+function [f, S0, Su, St, Sd, dmin, dmax] = Ex_RA_1(x,y,d)
 
 f = [0.5*x-x*y, x*y-0.5*y+d*y];
 

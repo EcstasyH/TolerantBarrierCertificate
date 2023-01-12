@@ -1,4 +1,5 @@
-function [f, S0, Su, Sd, dmin, dmax] = BC_Ex_RLCcircuit2D(x,y,d)
+function [f, S0, Su, Sd, dmin, dmax] = Ex_BC_RLCcircuit2D(x,y,d)
+% from Zamani2021CDC
 
 f = [8/9*x-1/18*y+0.01*d, y+x];
 

@@ -18,7 +18,7 @@ sdpvar gamma_p;
 % St: target
 % Sd: domain
 % d: disturbance under uniform distribution [dmin,dmax]
-[f, S0, Su, St, Sd, dmin, dmax] = RA_Ex_1(x,y,d);
+[f, S0, Su, St, Sd, dmin, dmax] = Ex_RA_1(x,y,d);
 
 [bc , coef_bc] = polynomial([x y], deg);
 bf = replace(bc, [x y], f);

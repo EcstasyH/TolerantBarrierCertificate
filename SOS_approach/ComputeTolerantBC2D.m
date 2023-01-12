@@ -17,7 +17,7 @@ sdpvar gamma_p;
 % Su: unsafe
 % Sd: domain
 % d: disturbance under uniform distribution [dmin,dmax]
-[f, S0, Su, Sd, dmin, dmax] = BC_Ex_RLCcircuit2D(x,y,d);
+[f, S0, Su, Sd, dmin, dmax] = Ex_BC_RLCcircuit2D(x,y,d);
 
 [bc , coef_bc] = polynomial([x y], deg);
 bcf = replace(bc, [x y], f);
@@ -26,7 +26,7 @@ ebc = 1/(dmax-dmin)*int(bcf, d, dmin, dmax);
 % constraints for TolerantBC
 % 1. -B(x)+gamma >= 0 over S0
 % 2. B(x) >= 0 over Sd
-% 3. B-E(B) >= 0 over S
+% 3. B-E(B) >= 0 over Sd
 % 4. B-E(B)-1 >= 0 over Su
 % sdeg: degree of SOS term
 sdeg = deg+4; % +4 by default
