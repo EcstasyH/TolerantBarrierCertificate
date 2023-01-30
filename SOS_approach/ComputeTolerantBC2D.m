@@ -17,7 +17,7 @@ sdpvar gamma_p;
 % Su: unsafe
 % Sd: domain
 % d: disturbance under uniform distribution [dmin,dmax]
-[f, S0, Su, Sd, dmin, dmax] = Ex_BC_RLCcircuit2D(x,y,d);
+[f, S0, Su, Sd, dmin, dmax] = Ex_BC2D_RLCcircuit(x,y,d);
 
 [bc , coef_bc] = polynomial([x y], deg);
 bcf = replace(bc, [x y], f);

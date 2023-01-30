@@ -1,30 +1,10 @@
 function Plot2D(sample)
 
 figure (1);
-hold on;
 
-% read input
-% f: vector field 2D
-% S0: init
-% Su: unsafe
-% Sd: domain
-% d: disturbance under uniform distribution [dmin,dmax]
-syms x y d;
-[f, S0, Su, Sd, dmin, dmax] = Ex_BC_RLCcircuit2D(x,y,d);
-
-f0=fcontour(S0,'LineColor','g','LevelList',[0 0])
-fu=fcontour(Su,'LineColor','r','LevelList',[0 0])
-fd=fcontour(Sd,'LineColor','b','LevelList',[0 0])
-    
-%{
 syms x y
-s = '0.00244730907255-0.0665811632785*internal(1)+0.613467076354*internal(1)^2-1.86283253462*internal(1)^3+1.75636552469*internal(1)^4+0.838677471735*internal(1)^5-1.66179443944*internal(1)^6-0.176206153539*internal(1)^7+0.501837430523*internal(1)^8+0.0876828106449*internal(1)^9-0.0270341008909*internal(1)^10-0.00378551931696*internal(1)^11+0.000215825221517*internal(1)^12'
-%v = strrep(s,'internal(1)','x');
-v = strrep(s,'internal(2)','y');
+s = '0.00127739549276+0.108727153119*internal(1)+0.0105693485061*internal(2)+26.3020893479*internal(1)^2+1.70835452815*internal(2)^2+3.9607753153*internal(1)*internal(2)+32.996876563*internal(1)^3+9.48793950279*internal(1)^2*internal(2)+3.59141831529*internal(1)*internal(2)^2+0.475067628324*internal(2)^3-11.7044274396*internal(1)^4+0.352216966423*internal(1)^3*internal(2)-3.07320594822*internal(1)^2*internal(2)^2+0.337169854022*internal(1)*internal(2)^3-0.0350463092091*internal(2)^4-99.9940175085*internal(1)^5-52.6879916894*internal(1)^4*internal(2)-23.3973485089*internal(1)^3*internal(2)^2-5.83180098195*internal(1)^2*internal(2)^3-0.882562293805*internal(1)*internal(2)^4-0.128746462724*internal(2)^5+99.9571837637*internal(1)^6+23.0541673911*internal(1)^5*internal(2)+22.6604263953*internal(1)^4*internal(2)^2+4.09468618996*internal(1)^3*internal(2)^3+1.67466417018*internal(1)^2*internal(2)^4+0.0995330549293*internal(1)*internal(2)^5+0.0233013849079*internal(2)^6-4.37344235862*internal(1)^7-1.75425736138*internal(1)^6*internal(2)-2.72010407302*internal(1)^5*internal(2)^2-0.262689520459*internal(1)^4*internal(2)^3-0.00279196905934*internal(1)^3*internal(2)^4+0.105063545399*internal(1)^2*internal(2)^5-0.0319289717519*internal(1)*internal(2)^6-0.00112477691724*internal(2)^7'
+v = strrep(s,'internal(1)','x');
+v = strrep(v,'internal(2)','y');
 v = eval(v);
 fc = fcontour(v, 'r');
-fc.LevelList = [0];
-
-fc = fcontour(v, 'm');
-fc.LevelList = [-1];
-%}
