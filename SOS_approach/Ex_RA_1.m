@@ -1,4 +1,8 @@
-function [f, S0, Su, St, Sd, dmin, dmax] = Ex_RA_1(x,y,d)
+function [f, S0, Su, St, Sd, dmin, dmax] = Ex_RA_1(vars,d)
+
+
+x = vars(1);
+y = vars(2);
 
 f = [0.5*x-x*y, x*y-0.5*y+d*y];
 

@@ -1,5 +1,6 @@
-function Plot2D(sample)
 
+
+function Plot2D(sample)
 figure (1);
 
 syms x y

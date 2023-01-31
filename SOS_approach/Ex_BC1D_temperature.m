@@ -1,12 +1,8 @@
 function [f, S0, Su, Sd, dmin, dmax] = Ex_BC2D_RLCcircuit(vars,d)
 
-% adapted from Zamani2021CDC, Zamani2022HSCC
+% adapted from Zamani2022HSCC
 
-% real gamma >6.0 largest 13
-% result <12
-
-x = vars(1);
-y = vars(2);
+%TODO
 
 f = [8/9*x-1/18*y+0.01*d, y+x];
 
@@ -24,4 +20,3 @@ Sd = x^2+y^2-4^2; %<=0
 % disturbance range
 dmin = -1;
 dmax = 1;
-
