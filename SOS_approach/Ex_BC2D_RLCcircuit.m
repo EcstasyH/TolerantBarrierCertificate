@@ -2,11 +2,12 @@ function [f, S0, Su, Sd, dmin, dmax] = Ex_BC2D_RLCcircuit(x,y,d)
 
 % from Zamani2021CDC
 
-f = [8/9*x-1/18*y+0.05*d, y+x];
+f = [8/9*x-1/18*y+0.001*d, y+x];
 
-r = 0.01;
-xc = 0.25;
-yc = 1;
+r = 0.1;
+xc = 0.5;
+yc = 1.6;
+
 
 %{
 0.01 d

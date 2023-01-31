@@ -12,11 +12,11 @@ hold on;
 %syms x y d;
 %[f, S0, Su, Sd, dmin, dmax] = Ex_BC2D_RLCcircuit(x,y,d);
 
-r = 0.01;
-xc = 0.25;
-yc = 1;
+r = 0.1;
+xc = 0.5;
+yc = 1.6;
 
-f1 = @(x,y) 8/9*x-1/18*y+0.05*random('unif',-1,1);
+f1 = @(x,y) 8/9*x-1/18*y+0.001*random('unif',-1,1);
 f2 = @(x,y) x+y;
 S0 = @(x,y) (x-xc)^2+(y-yc)^2-r^2;
 Su = @(x,y) 4-y^2; % <=0
