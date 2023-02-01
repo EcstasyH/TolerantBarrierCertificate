@@ -3,7 +3,7 @@ function [gamma_sol, sol, bc_val] = ComputeTolerantBC(dim, deg, azuma)
 % dim: system dimension
 % deg: degree of tolerant BC template 
 
-tic
+%tic
 yalmip('clear')
 
 sol=0; % =1 if a verified TolerantBC is found
@@ -66,7 +66,7 @@ diagnostics=  solvesdp(constraints, gamma_p, options, [gamma_p;coef_bc;coef_s1;c
 
 if diagnostics.problem == 0
     sol=1;
-    fprintf('A feasible solution is found at degree %d:',deg); 
+    fprintf('A feasible solution is found at degree %d\n:',deg); 
     
     coef_val = double(coef_bc);
     % if the abolute value of a coefficient is less than 10^-5, 
@@ -94,6 +94,6 @@ else
     disp('No solution is found.');
     bc_val = 0;
 end
-toc
+%toc
 return
     
