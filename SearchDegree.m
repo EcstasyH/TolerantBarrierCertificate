@@ -1,9 +1,14 @@
 function SearchDegree()
 
-% azuma = 0 Markov ineq  =1 AH ineq
-azuma = 0; 
-% ra = 0 safety =1 reach-avoid
+dim = 4;
+azuma = 0;
 ra = 1;
+
+if ra == 0
+    fprintf("================Safety================\n");
+else
+    fprintf("==============Reach-Avoid=============\n");
+end
 
 fprintf("===============gamma1=================\n");
 for d =[2:12]
