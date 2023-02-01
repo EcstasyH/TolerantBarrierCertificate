@@ -1,11 +1,11 @@
-function [f, S0, Su, St, Sd, dmin, dmax] = HarmOsc(x,y,d)
+function [f, S0, Su, St, Sd, dmin, dmax] = RA3(x,y,d)
 
-f = [x + y , y - x - 7*y + d*y];
+f = [y , -x - 7*y + d*y];
 
 %initial set
 S0 = 4*(x+2)^2 + 4*y^2 - 1; % <=0
 %unsafe set
-Su = 100*x^2 + 100*(y-1)^2 - 1; %<=0
+Su = 4*x^2 + 4*(y-1)^2 - 1; %<=0
 %target set
 St = 10*x^2 +10*y^2 - 1; %<=0
 %domain
