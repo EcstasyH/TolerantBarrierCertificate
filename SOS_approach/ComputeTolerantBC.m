@@ -36,7 +36,7 @@ ebc = 1/(dmax-dmin)*int(bcf, d, dmin, dmax);
 % 3. B-E(B) >= 0 over Sd (simplified)
 % 4. B-E(B)-1 >= 0 over Su
 % sdeg: degree of SOS term
-sdeg = deg+2; % +2 by default (strange that +2 is better than +4)
+sdeg = deg+4; % +4 by default
 
 [s1, coef_s1] = polynomial(vars, sdeg);
 [s2, coef_s2] = polynomial(vars, sdeg);
@@ -66,7 +66,7 @@ diagnostics=  solvesdp(constraints, gamma_p, options, [gamma_p;coef_bc;coef_s1;c
 
 if diagnostics.problem == 0
     sol=1;
-    fprintf('A feasible solution is found at degree %d\n:',deg); 
+    fprintf('A feasible solution is found at degree %d: \n',deg); 
     
     coef_val = double(coef_bc);
     % if the abolute value of a coefficient is less than 10^-5, 

@@ -1,13 +1,14 @@
-function [sol, bc_val] = ComputeTolerantRA(dim, deg)
+function [sol, bc_val] = ComputeTolerantRA(dim, deg, azuma)
 %INPUT:
 % dim: system dimension
 % deg: degree of tolerant BC template 
 
-tic
+%tic
 yalmip('clear')
 
 sol=0; % =1 if a verified TolerantRA is found
 bc_val=0; 
+gamma_sol = 0;
 
 % d: random disturbance
 sdpvar d gamma_p;
@@ -23,9 +24,7 @@ vars = vars_total(1:dim);
 % Sd: domain
 % d: disturbance under uniform distribution [dmin,dmax]
 
-%[f, S0, Su, St, Sd, dmin, dmax] = Ex_RA_1(x,y,d);
-%[f, S0, Su, St, Sd, dmin, dmax] = VandpRA(x1,x2,d);
-[f, S0, Su, St, Sd, dmin, dmax] = HarmOsc(x1,x2,d);
+[f, S0, Su, St, Sd, dmin, dmax] = HarmOsc(vars,d);
 
 [bc , coef_bc] = polynomial(vars, deg);
 bf = replace(bc, vars, f);
@@ -37,7 +36,7 @@ ebf = 1/(dmax-dmin)*int(bf, d, dmin, dmax);
 % 3. B-E(B) >= 0 over S\St (simplified)
 % 4. B-E(B)-1 >= 0 over Su
 % sdeg: degree of SOS term
-sdeg  = deg; % +2 by default (strange that +2 is better than +4)
+sdeg  = deg+4; % +4 by default
 
 [s1, coef_s1] = polynomial(vars, sdeg);
 [s2, coef_s2] = polynomial(vars, sdeg);
@@ -81,5 +80,5 @@ else
     disp('No solution is found.');
     bc_val = 0;
 end
-toc
+%toc
 return

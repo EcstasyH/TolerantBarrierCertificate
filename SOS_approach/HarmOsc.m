@@ -1,5 +1,7 @@
-function [f, S0, Su, St, Sd, dmin, dmax] = HarmOsc(x,y,d)
+function [f, S0, Su, St, Sd, dmin, dmax] = HarmOsc(vars,d)
 
+x = vars(1);
+y = vars(2);
 f = [y , -x - 7*y + d*y];
 
 %initial set

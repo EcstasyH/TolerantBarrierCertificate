@@ -2,12 +2,11 @@ function SearchDegree()
 
 dim = 2;
 azuma = 0;
-prob = 0.9;
 
 fprintf("===============gamma1=================\n");
 
-for d =[2:8]
-    fprintf("Tring deg %d ...", d);
+for d =[2:12]
+    fprintf("Tring deg %d... ", d);
     [gamma1, sol, bc_val]  =ComputeTolerantBC(dim, d, azuma);   
 end
 fprintf("=====================================\n");
@@ -15,7 +14,7 @@ fprintf("=====================================\n");
 
 azuma = 1;
 fprintf("===============gamma2=================\n");
-for d =[2:8]
+for d =[2:12]
     fprintf("Tring deg %d ...", d);
     [gamma2, sol, bc_val]  =ComputeTolerantBC(dim, d, azuma);   
 end
