@@ -16,14 +16,9 @@ Sd = @(x) (x-0)^2-2^2;
 
 
 
-if plot_flag == 1
-    figure (1);
-    hold on;
-
-    f0=fcontour(S0, 'LineColor','g', 'LevelList',[0 0]);
-    fu=fcontour(Su, 'LineColor','r', 'LevelList',[0 0]);
-    fd=fcontour(Sd, 'LineColor','b','LevelList',[0 0]);
-end
+f0=fcontour(S0, 'LineColor','g', 'LevelList',[0 0]);
+fu=fcontour(Su,  'LineColor','r', 'LevelList',[0 0]);
+fd=fcontour(Sd, 'LineColor','b','LevelList',[0 0]);
 
 %{
 % Sample2D
@@ -34,12 +29,12 @@ count = 0;
 badmax = 0;
 for i = [1:sample]
     listx = [random('unif',xc-r ,xc+r)];
-    listy = [random('unif',yc-r ,yc+r)];    
+    listy = [random('unif',yc-r ,yc+r)];
     if S0(listx,listy) >= 0
         continue
     end
-    total = total + 1;
     count2 = 0;
+    total = total + 1;
     for t = [1:100]
         curx = f1(listx(t),listy(t));
         cury = f2(listx(t),listy(t));
@@ -52,14 +47,8 @@ for i = [1:sample]
         if badmax< count2
             badmax = count2;
         end
-        if Sd(listx(t),listy(t))>=0
-            break
-        end
     end
-
-    if plot_flag == 1
-        plot(listx,listy);
-    end    
+    plot(listx,listy);
 end
 %}
 

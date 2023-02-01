@@ -22,7 +22,10 @@ vars = vars_total(1:dim);
 % St: target
 % Sd: domain
 % d: disturbance under uniform distribution [dmin,dmax]
-[f, S0, Su, St, Sd, dmin, dmax] = Ex_RA_1(vars,d);
+
+%[f, S0, Su, St, Sd, dmin, dmax] = Ex_RA_1(x,y,d);
+%[f, S0, Su, St, Sd, dmin, dmax] = VandpRA(x1,x2,d);
+[f, S0, Su, St, Sd, dmin, dmax] = HarmOsc(x1,x2,d);
 
 [bc , coef_bc] = polynomial(vars, deg);
 bf = replace(bc, vars, f);
@@ -34,25 +37,26 @@ ebf = 1/(dmax-dmin)*int(bf, d, dmin, dmax);
 % 3. B-E(B) >= 0 over S\St (simplified)
 % 4. B-E(B)-1 >= 0 over Su
 % sdeg: degree of SOS term
-sdeg  = deg+2; % +2 by default (strange that +2 is better than +4)
+sdeg  = deg; % +2 by default (strange that +2 is better than +4)
 
 [s1, coef_s1] = polynomial(vars, sdeg);
 [s2, coef_s2] = polynomial(vars, sdeg);
 [s3, coef_s3] = polynomial(vars, sdeg);
 [s4, coef_s4] = polynomial(vars, sdeg);
 [s5, coef_s5] = polynomial(vars, sdeg);
+[s6, coef_s6] = polynomial(vars, sdeg);
 
 % sos constraints of degree sos_deg 
 constraints = [ sos( -bc + gamma_p + s1*S0),...,
                 sos( bc + s2*Sd),...,
-                sos( bc - ebf + s3*Sd - s4*St),...,
+                sos( bc - ebf + s3*Sd - s4*St - s6*Su),...,
                 sos( bc - ebf -1 + s5*Su),...,
                 coef_bc>=-100, coef_bc<=100, ...,
-                sos(s1), sos(s2), sos(s3), sos(s4), sos(s5)];
+                sos(s1), sos(s2), sos(s3), sos(s4), sos(s5),sos(s6)];
 
 options = sdpsettings('solver','mosek','verbose',0, 'sos.newton',1,'sos.congruence',1);
 
-diagnostics= solvesdp(constraints, gamma_p, options, [coef_bc;coef_s1;coef_s2;coef_s3;coef_s4;coef_s5]);
+diagnostics= solvesdp(constraints, gamma_p, options, [coef_bc;coef_s1;coef_s2;coef_s3;coef_s4;coef_s5;coef_s6]);
 
 if diagnostics.problem == 0
     sol=1;
