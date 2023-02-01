@@ -40,7 +40,7 @@ ebf = 1/(dmax-dmin)*int(bf, d, dmin, dmax);
 % 3. B-E(B) >= 0 over S\St (simplified)
 % 4. B-E(B)-1 >= 0 over Su
 % sdeg: degree of SOS term
-sdeg  = deg+4; % +4 by default
+sdeg  = deg; % +4 by default
 
 [s1, coef_s1] = polynomial(vars, sdeg);
 [s2, coef_s2] = polynomial(vars, sdeg);
