@@ -66,7 +66,7 @@ diagnostics=  solvesdp(constraints, gamma_p, options, [gamma_p;coef_bc;coef_s1;c
 
 if diagnostics.problem == 0
     sol=1;
-    fprintf('A feasible solution is found at degree %d: \n',deg); 
+    fprintf('A feasible solution is found at degree %d:\n',deg); 
     
     coef_val = double(coef_bc);
     % if the abolute value of a coefficient is less than 10^-5, 
