@@ -1,4 +1,4 @@
-function [sol, bc_val] = ComputeTolerantBC(dim, deg, azuma)
+function [gamma_sol, sol, bc_val] = ComputeTolerantBC(dim, deg, azuma)
 %INPUT:
 % dim: system dimension
 % deg: degree of tolerant BC template 
@@ -9,6 +9,7 @@ yalmip('clear')
 
 sol=0; % =1 if a verified TolerantBC is found
 bc_val=0; 
+gamma_sol = 0;
 
 % d: random disturbance
 sdpvar d gamma_p;
@@ -23,8 +24,8 @@ vars = vars_total(1:dim);
 % Sd: domain
 % d: disturbance under uniform distribution [dmin,dmax]
 
-[f, S0, Su, Sd, dmin, dmax] = Ex_BC2D_LieDeriv(vars,d);
-%[f, S0, Su, Sd, dmin, dmax] = Ex_BC2D_Zamani21(vars,d);
+[f, S0, Su, Sd, dmin, dmax] = Ex_BC2D_Zamani21(vars,d);
+%[f, S0, Su, Sd, dmin, dmax] = Ex_BC1D_randomwalk(vars,d);
 
 [bc , coef_bc] = polynomial(vars, deg);
 bcf = replace(bc, vars, f);
@@ -56,7 +57,7 @@ else
                     sos(  bc + s2*Sd ),...,
                     sos(  bc - ebc + s3*Sd),...,
                     sos(  bc - ebc - 1 + s4*Su),...,
-                    gamma_p>= 1, coef_bc>=-100, coef_bc<=100, ...,
+                    coef_bc>=-100, coef_bc<=100, ...,
                     sos(s1), sos(s2), sos(s3), sos(s4)];
 end
 
@@ -80,10 +81,14 @@ if diagnostics.problem == 0
     
     %disp('Tolerant BC (unverified):'); 
     %sdisplay(bc_val);
-    if azuma == 0
-        fprintf('gamma1: %f\n', double(gamma_p));
-    else 
-        fprintf('gamma2: %f\n', double(gamma_p));        
+    gamma_sol = double(gamma_p);
+    if gamma_sol <= 1
+        fprintf("Numerical error detected.\n");
+        sol = 0;
+    elseif azuma == 0
+        fprintf('gamma1: %f\n', gamma_sol);
+    elseif azuma == 1
+        fprintf('gamma2: %f\n', gamma_sol);        
     end
 else
     disp('No solution is found.');

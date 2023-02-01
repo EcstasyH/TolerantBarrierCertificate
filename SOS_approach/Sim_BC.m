@@ -1,19 +1,19 @@
 function Sim_BC()
-plot_flag = 1;
+plot_flag = 0;
 
 % system dynamic
   
-r = 0.1;
-xc = 0;
-yc = -0.5;
+xc = 0.25;
+r = 0.25;
 
-t = 0.1;
-f1 = @(x,y) x+(-2*y)*t;
-f2 = @(x,y) y+x^2*t+0.1*random('unif',-1,1)*x;
+bias = -0.2;
 
-S0 = @(x,y) (x-xc)^2+(y-yc)^2-r^2;
-Su = @(x,y) (x-0.5)^2+(y-0.75)^2-0.4^2;
-Sd = @(x,y) x^2+y^2-1.5^2;
+f = @(x,y) x+0.4*(random('unif',-1,1)+bias);
+
+S0 = @(x) (x-xc)^2-r^2;
+Su = @(x) 0.5-x;%(x-1.5)^2-2.5^2;
+Sd = @(x) (x-0)^2-2^2;
+
 
 
 if plot_flag == 1
@@ -25,7 +25,8 @@ if plot_flag == 1
     fd=fcontour(Sd, 'LineColor','b','LevelList',[0 0]);
 end
 
-% Sample Points
+%{
+% Sample2D
 sample = 300;
 
 total = 0;
@@ -58,6 +59,38 @@ for i = [1:sample]
 
     if plot_flag == 1
         plot(listx,listy);
+    end    
+end
+%}
+
+% Sample1D
+sample = 300;
+
+total = 0;
+count = 0;
+badmax = 0;
+for i = [1:sample]
+    listx = [random('unif',xc-r ,xc+r)];
+    total = total + 1;
+    
+    count2 = 0;
+    for t = [1:100]
+        curx = f(listx(t));
+        listx = [listx curx];
+        if Su(listx(t))<=0
+            count = count+1;
+            count2 = count2 + 1;
+        end
+        if badmax< count2
+            badmax = count2;
+        end
+        if Sd(listx(t))>=0
+            break
+        end
+    end
+
+    if plot_flag == 1
+        plot(listx);
     end    
 end
 
