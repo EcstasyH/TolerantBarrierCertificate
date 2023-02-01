@@ -1,10 +1,9 @@
 function SearchDegree()
-
-dim = 2;
-azuma = 1
-fprintf("=====================================\n");
-for d =[2:12]
-    fprintf("Tring deg %d ...", d);
-    [sol, bc_val]  =ComputeTolerantBC(dim, d, azuma);   
+for i =[2:15]
+    fprintf("Tring deg %d ...\n", i);
+    %[sol, bc_val]  =ComputeTolerantRA(2,i); 
+    [~, ~]  =ComputeTolerantRA(2,i);   
+    %if sol == 1
+    %    break;
+    %end
 end
-fprintf("=====================================\n");
