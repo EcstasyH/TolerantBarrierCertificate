@@ -3,7 +3,7 @@ function SearchDegree()
 % azuma = 0 Markov ineq  =1 AH ineq
 azuma = 0; 
 % ra = 0 safety =1 reach-avoid
-ra = 1;
+ra = 0;
 
 fprintf("===============gamma1=================\n");
 for d =[2:12]
