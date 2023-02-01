@@ -24,8 +24,10 @@ vars = vars_total(1:dim);
 % d: disturbance under uniform distribution [dmin,dmax]
 
 %[f, S0, Su, St, Sd, dmin, dmax] = Ex_RA_1(x,y,d);
-%[f, S0, Su, St, Sd, dmin, dmax] = VandpRA(x1,x2,d);
-[f, S0, Su, St, Sd, dmin, dmax] = HarmOsc(x1,x2,d);
+%[f, S0, Su, St, Sd, dmin, dmax] = VandpRA(vars,d);
+%[f, S0, Su, St, Sd, dmin, dmax] = HarmOsc(x1,x2,d);
+%[f, S0, Su, St, Sd, dmin, dmax] = Ex_RA_LieDeriv(vars,d);
+[f, S0, Su, St, Sd, dmin, dmax] = Ex_RA_Prajna07(vars,d);
 
 [bc , coef_bc] = polynomial(vars, deg);
 bf = replace(bc, vars, f);
