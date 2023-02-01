@@ -37,10 +37,10 @@ ebf = 1/(dmax-dmin)*int(bf, d, dmin, dmax);
 % constraints for TolerantRA
 % 1. -B(x)+gamma >= 0 over S0
 % 2. B(x) >= 0 over Sd
-% 3. B-E(B) >= 0 over S\St (simplified)
+% 3. B-E(B) >= 0 over S\(St U Su)
 % 4. B-E(B)-1 >= 0 over Su
 % sdeg: degree of SOS term
-sdeg  = deg; % +4 by default
+sdeg  = deg+4; % +4 by default
 
 [s1, coef_s1] = polynomial(vars, sdeg);
 [s2, coef_s2] = polynomial(vars, sdeg);
@@ -87,7 +87,7 @@ if diagnostics.problem == 0
     %disp('Tolerant RA (unverified):');
     %sdisplay(bc_val);
     gamma_sol = double(gamma_p);
-    if gamma_sol <= 1 % assume alway greater than 1 
+    if gamma_sol <= 0.01 
         fprintf("Numerical error detected.\n");
         sol = 0;
     elseif azuma == 0
