@@ -1,6 +1,7 @@
-      		gamma1      gamma2
-HarmOsc		8.01    	7.10
-LieDeriv	3.46		3.97
-Prajna07	8.32		13.98
-Zamani21	14.56		25.90
-CHW         8.79        15.51
+      		Gamma1  deg     Time(s)     Gamma2  deg     Time(s)
+HarmOsc		8.01    	             7.10
+LieDeriv	3.46		             3.97
+Prajna07	8.32		             13.98
+Zamani21	14.56		             25.90
+CHW         8.79    7       131.48      15.51   7       147.55
+Lotka       7.06    10      47.82       14.04   10      45.26
