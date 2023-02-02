@@ -15,7 +15,7 @@ function [sol, gamma] = ComputeTolerantBC(deg, azuma, ra)
 yalmip('clear')
 sol=0;
 gamma = 0;
-% tic
+tic
 
 % SYSTEM DYNAMIC
 %
@@ -116,7 +116,9 @@ if diagnostics.problem == 0
     else
         fprintf('gamma2: %f\n', gamma);        
     end
-
+    if gamma <= 0.1
+        fprintf('Warning: there may be numerical errors.\n')
+    end
     %{
     % construct B(x)
     coef_val = double(coef_bc);
@@ -137,7 +139,7 @@ else
     bc_val = 0;
 end
 
-%toc
+toc
 
 return
         
