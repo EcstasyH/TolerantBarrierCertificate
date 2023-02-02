@@ -1,4 +1,4 @@
-function [sol, gamma] = TolerantBC(deg, azuma, ra)
+function [sol, gamma] = ComputeTolerantBC(deg, azuma, ra)
 % INPUT
 %   deg: degree of tolerant BC template 
 %   azuma:  = 0 use condition for Markov inequality
@@ -15,7 +15,7 @@ function [sol, gamma] = TolerantBC(deg, azuma, ra)
 yalmip('clear')
 sol=0;
 gamma = 0;
-tic
+% tic
 
 % SYSTEM DYNAMIC
 %
@@ -31,9 +31,7 @@ sdpvar x1 x2 x3 x4 x5 x6 d;
 vars_total = [x1,x2,x3,x4,x5,x6,d];
 
 %[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex2d_HarmOsc(vars_total,ra);
-%[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex2d_LieDerivative(vars_total,ra);
-%[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex2d_Prajna07(vars_total,ra);
-[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex2d_Zamani21(vars_total,ra);
+
 
 f_total = [f1,f2,f3,f4,f5,f6];
 S0 = S0_f(x1,x2,x3,x4,x5,x6);
@@ -120,9 +118,7 @@ if diagnostics.problem == 0
     else
         fprintf('gamma2: %f\n', gamma);        
     end
-    if gamma <= 0.1
-        fprintf('Warning: there may be numerical errors.\n')
-    end
+
     %{
     % construct B(x)
     coef_val = double(coef_bc);
@@ -143,7 +139,7 @@ else
     bc_val = 0;
 end
 
-toc
+%toc
 
 return
         

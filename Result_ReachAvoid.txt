@@ -1,0 +1,5 @@
+      		gamma1      gamma2
+HarmOsc		8.01    	7.10
+LieDeriv	3.46		3.97
+Prajna07	8.32		13.98
+Zamani21	14.56		25.90

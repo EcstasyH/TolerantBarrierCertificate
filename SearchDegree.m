@@ -11,17 +11,17 @@ else
 end
 
 fprintf("===============gamma1=================\n");
-for d =[2:maxdeg]
+for d = 2:maxdeg
     fprintf("Tring deg %d... ", d);
-    [sol, gamma1]  =TolerantBC(d, azuma, ra);   
+    [~, ~]  =TolerantBC(d, azuma, ra);   
 end
 fprintf("=====================================\n");
 
 
 azuma = 1;
 fprintf("===============gamma2=================\n");
-for d =[2:maxdeg]
+for d = 2:maxdeg
     fprintf("Tring deg %d ...", d);
-    [sol, gamma2]  =TolerantBC(d, azuma,ra);   
+    [~, ~]  =TolerantBC(d, azuma,ra);   
 end
 fprintf("=====================================\n");
