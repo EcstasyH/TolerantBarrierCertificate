@@ -12,7 +12,6 @@ end
 
 fprintf("===============gamma1=================\n");
 for d = 2:maxdeg
-    fprintf('\n')
     fprintf("Tring deg %d... ", d);
     [~, ~]  =TolerantBC(d, azuma, ra);   
 end
@@ -22,7 +21,6 @@ fprintf("=====================================\n");
 azuma = 1;
 fprintf("===============gamma2=================\n");
 for d = 2:maxdeg
-    fprintf('\n')
     fprintf("Tring deg %d ...", d);
     [~, ~]  =TolerantBC(d, azuma,ra);   
 end
