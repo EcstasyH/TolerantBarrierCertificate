@@ -1,4 +1,4 @@
-function [dim,f1,f2,f3,f4,f5,f6,S0,Su,St,Sd] = Ex_Prajna07(vars,ra)
+function [dim,f1,f2,f3,f4,f5,f6,S0,Su,St,Sd] = Ex2d_Prajna07(vars,ra)
 
 % adapted from Prajna07TAC
 % continuous time => descretization
