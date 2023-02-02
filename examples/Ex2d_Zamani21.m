@@ -1,7 +1,5 @@
 function [dim,f1,f2,f3,f4,f5,f6,S0,Su,St,Sd] = Ex2d_Zamani21(vars,ra)
 
-% adapted from Zamani21CDC
-
 dim = 2;
 
 x1 = vars(1);
