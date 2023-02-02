@@ -1,4 +1,4 @@
-function  [dim,f1,f2,f3,f4,f5,f6,S0,Su,St,Sd] = Ex1d_RandomWalk1(vars)
+function  [dim,f1,f2,f3,f4,f5,f6,S0,Su,St,Sd] = Ex1d_RandomWalk1(vars,ra)
 
 % random walk with bias
 dim = 1;
