@@ -2,7 +2,7 @@ function  [dim,f1,f2,f3,f4,f5,f6,S0,Su,St,Sd] = Ex2d_Vandp(vars,ra)
     
     
 dim = 2;
-
+ 
 x1 = vars(1);
 x2 = vars(2);
 x3 = vars(3);
@@ -12,11 +12,7 @@ x6 = vars(6);
 d  = vars(7);
 
 t = 0.1;
-<<<<<<< HEAD
- 
-=======
 
->>>>>>> 1781421 (van)
 f1 = x1 - t*2*x2;
 f2 = x2 + t*(x1+0.5*(x1^2+1-d)*x2);
 f3 = 0;

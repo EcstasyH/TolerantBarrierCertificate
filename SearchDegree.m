@@ -2,7 +2,7 @@ function SearchDegree()
 
 maxdeg = 13;
 azuma = 0;
-ra = 0;
+ra = 1;
 
 if ra == 0
     fprintf("================Safety==================\n");
