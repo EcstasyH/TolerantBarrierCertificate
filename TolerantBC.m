@@ -30,7 +30,14 @@ sdpvar gamma_p;
 sdpvar x1 x2 x3 x4 x5 x6 d;
 vars_total = [x1,x2,x3,x4,x5,x6,d];
 
-[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex4d_CWH(vars_total,ra);
+%[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex2d_HarmOsc(vars_total,ra);
+%[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex2d_LieDerivative(vars_total,ra);
+%[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex2d_Prajna07(vars_total,ra);
+%[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex2d_arch(vars_total,ra);
+%[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex2d_Zamani21(vars_total,ra);
+%[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex4d_CWH(vars_total,ra);
+%[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex3d_Lotka(vars_total,ra);
+[dim,f1,f2,f3,f4,f5,f6,S0_f,Su_f,St_f,Sd_f] = Ex2d_Vandp(vars_total,ra);
 
 
 f_total = [f1,f2,f3,f4,f5,f6];

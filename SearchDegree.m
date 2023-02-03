@@ -1,6 +1,6 @@
 function SearchDegree()
 
-maxdeg =6;%6,10,12,16
+maxdeg = 12;
 azuma = 0;
 ra = 1;
 
