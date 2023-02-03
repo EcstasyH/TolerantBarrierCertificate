@@ -31,3 +31,46 @@ elseif ra == 1
     Sd = @(x1,x2,x3,x4,x5,x6) x1^2+x2^2+x3^2+x4^2-1;
 end
         
+%{
+==============Reach-Avoid===============
+===============gamma1=================
+
+Tring deg 2... No solution is found.
+Elapsed time is 2.270682 seconds.
+
+Tring deg 3... No solution is found.
+Elapsed time is 5.375500 seconds.
+
+Tring deg 4... A feasible solution is found:
+gamma1: 19.946352
+Elapsed time is 16.202254 seconds.
+
+Tring deg 5... A feasible solution is found:
+gamma1: 15.926526
+Elapsed time is 30.911247 seconds.
+
+Tring deg 6... A feasible solution is found:
+gamma1: 11.627453
+Elapsed time is 99.035832 seconds.
+=====================================
+===============gamma2=================
+
+Tring deg 2 ...No solution is found.
+Elapsed time is 2.155446 seconds.
+
+Tring deg 3 ...No solution is found.
+Elapsed time is 5.101976 seconds.
+
+Tring deg 4 ...A feasible solution is found:
+gamma2: 37.078265
+Elapsed time is 14.763087 seconds.
+
+Tring deg 5 ...A feasible solution is found:
+gamma2: 25.760184
+Elapsed time is 29.667695 seconds.
+
+Tring deg 6 ...A feasible solution is found:
+gamma2: 19.612834
+Elapsed time is 96.624216 seconds.
+=====================================
+%}
