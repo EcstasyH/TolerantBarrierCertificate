@@ -3,22 +3,26 @@ plot_flag = 1;
 
 % system dynamic
   
+t=0.1;
+f1 = @(x1,x2) x1 - t*2*x2;
+f2 = @(x1,x2) x2 + t*(0.8*x1+10*x1^2*x2-(2+random('unif',-1,1))*x2);
 
-f1 = @(x1,x2)8/9*x1-1/18*x2+0.02*random('unif',-1,1);
-f2 = @(x1,x2)  x1+x2;
 
-xc = 0.2;
-yc = 0.6;
+xc = 0.5;
+yc = 0.5;
 r = 0.1;
+
 S0 = @(x1,x2) (x1-xc)^2+(x2-yc)^2-r^2;
-Su = @(x1,x2) 1-x2^2;
-Sd = @(x1,x2) 9*(x1+0)^2+(x2+0)^2-1.5^2;
+Su = @(x1,x2) (x1+0.25)^2+x2^2-0.1^2;
+St = @(x1,x2) x1^2+x2^2-0.1^2;
+Sd = @(x1,x2) x1^2+x2^2-1;
 
 if plot_flag == 1
     figure(1);
     hold on;
     f0=fcontour(S0, 'LineColor','g', 'LevelList',[0 0]);
     fu=fcontour(Su,  'LineColor','r', 'LevelList',[0 0]);
+    ft=fcontour(St,  'LineColor','r', 'LevelList',[0 0]);
     fd=fcontour(Sd, 'LineColor','b','LevelList',[0 0]);
 end
 
