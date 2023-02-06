@@ -2,7 +2,7 @@ function SearchDegree()
 
 % maxdeg: search range, set 16,12,10,6 for system with dimension 1,2,3,4
 % ra: =0 safety =1 reach-avoid
-maxdeg = 16; %6,10,12,16
+maxdeg = 12; %6,10,12,16
 ra = 0; 
 
 

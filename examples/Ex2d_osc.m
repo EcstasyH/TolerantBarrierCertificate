@@ -12,24 +12,19 @@ x5 = vars(5);
 x6 = vars(6);
 d  = vars(7);
 
-t = 0.1;
-
+t=0.1;
 f1 = x1+t*x2;
-f2 = x2-t*(x1+(1.5-0.5*d)*x2);
+f2 = x2+t*(-x1-2*(0.8-d)*x2);
 f3 = 0;
 f4 = 0;
 f5 = 0;
 f6 = 0;
 
 if ra == 0
-    S0 = @(x1,x2,x3,x4,x5,x6) (x1+2)^2+(x2+0)^2-0.5^2;
-    Su = @(x1,x2,x3,x4,x5,x6) (x1-0)^2+(x2-1)^2-0.3^2;
-    St = @(x1,x2,x3,x4,x5,x6) 10*(x1-0)^2+10*(x2-0)^2-1;
-    Sd = @(x1,x2,x3,x4,x5,x6) (x1-0)^2+(x2-0)^2-10;
-%    S0 = @(x1,x2,x3,x4,x5,x6) (x1+2)^2+(x2+0)^2-0.5^2;
-%    Su = @(x1,x2,x3,x4,x5,x6) 10*(x1-0)^2+10*(x2-1)^2-1;
-%    St = @(x1,x2,x3,x4,x5,x6) 10*(x1-0)^2+10*(x2-0)^2-1;
-%    Sd = @(x1,x2,x3,x4,x5,x6) (x1-0)^2+(x2-0)^2-10;
+    S0 = @(x1,x2,x3,x4,x5,x6) (x1)^2+(x2-0.75)^2-0.1^2;
+    Su = @(x1,x2,x3,x4,x5,x6) (x1-0.5)^2+(x2)^2-0.225^2;
+    St = @(x1,x2,x3,x4,x5,x6) -1;
+    Sd = @(x1,x2,x3,x4,x5,x6) (x1+0)^2+(x2+0)^2-1^2;
 else
     S0 = @(x1,x2,x3,x4,x5,x6) (x1+2)^2+(x2+0)^2-0.5^2;
     Su = @(x1,x2,x3,x4,x5,x6) (x1-0)^2+(x2-1)^2-0.3^2;
@@ -41,169 +36,79 @@ end
 ================Safety==================
 ===============gamma1=================
 
-Tring deg 2... A feasible solution is found:
-gamma1: 19.975646
-Elapsed time is 0.608726 seconds.
+Tring deg 2... No solution is found.
+Elapsed time is 0.738865 seconds.
 
-Tring deg 3... A feasible solution is found:
-gamma1: 10.197422
-Elapsed time is 1.218501 seconds.
+Tring deg 3... No solution is found.
+Elapsed time is 1.297630 seconds.
 
 Tring deg 4... No solution is found.
-Elapsed time is 1.910322 seconds.
+Elapsed time is 2.000506 seconds.
 
-Tring deg 5... No solution is found.
-Elapsed time is 2.668010 seconds.
-
-Tring deg 6... No solution is found.
-Elapsed time is 3.572657 seconds.
-
-Tring deg 7... No solution is found.
-Elapsed time is 4.656638 seconds.
-
-Tring deg 8... A feasible solution is found:
-gamma1: 0.002747
-Warning: there may be numerical errors.
-Elapsed time is 5.970413 seconds.
-
-Tring deg 9... A feasible solution is found:
-gamma1: 0.000566
-Warning: there may be numerical errors.
-Elapsed time is 7.473691 seconds.
-
-Tring deg 10... A feasible solution is found:
-gamma1: -0.000793
-Warning: there may be numerical errors.
-Elapsed time is 9.326827 seconds.
-
-Tring deg 11... A feasible solution is found:
-gamma1: -0.000086
-Warning: there may be numerical errors.
-Elapsed time is 11.382171 seconds.
-
-Tring deg 12... No solution is found.
-Elapsed time is 14.054343 seconds.
-=====================================
-===============gamma2=================
-
-Tring deg 2 ...A feasible solution is found:
-gamma2: 78.211337
-Elapsed time is 0.581832 seconds.
-
-Tring deg 3 ...A feasible solution is found:
-gamma2: 77.619878
-Elapsed time is 1.163261 seconds.
-
-Tring deg 4 ...No solution is found.
-Elapsed time is 1.854327 seconds.
-
-Tring deg 5 ...No solution is found.
-Elapsed time is 2.611200 seconds.
-
-Tring deg 6 ...No solution is found.
-Elapsed time is 3.633707 seconds.
-
-Tring deg 7 ...No solution is found.
-Elapsed time is 4.679229 seconds.
-
-Tring deg 8 ...No solution is found.
-Elapsed time is 5.924884 seconds.
-
-Tring deg 9 ...No solution is found.
-Elapsed time is 7.363599 seconds.
-
-Tring deg 10 ...No solution is found.
-Elapsed time is 9.125236 seconds.
-
-Tring deg 11 ...No solution is found.
-Elapsed time is 11.275121 seconds.
-
-Tring deg 12 ...A feasible solution is found:
-gamma2: 6.755922
-Elapsed time is 13.723492 seconds.
-=====================================
-
-==============Reach-Avoid=============
-===============gamma1=================
-
-Tring deg 2... A feasible solution is found:
-gamma1: 19.969396
-Elapsed time is 0.589392 seconds.
-
-Tring deg 3... A feasible solution is found:
-gamma1: 7.614305
-Elapsed time is 1.223656 seconds.
-
-Tring deg 4... No solution is found.
-Elapsed time is 1.933005 seconds.
-
-Tring deg 5... No solution is found.
-Elapsed time is 2.708347 seconds.
+Tring deg 5... A feasible solution is found:
+gamma1: 35.517423
+Elapsed time is 2.762404 seconds.
 
 Tring deg 6... A feasible solution is found:
-gamma1: 0.035223
-Warning: there may be numerical errors.
-Elapsed time is 3.665072 seconds.
+gamma1: 31.649912
+Elapsed time is 3.632869 seconds.
 
 Tring deg 7... A feasible solution is found:
-gamma1: 0.011428
-Warning: there may be numerical errors.
-Elapsed time is 4.754801 seconds.
+gamma1: 30.607255
+Elapsed time is 4.627570 seconds.
 
 Tring deg 8... A feasible solution is found:
-gamma1: 0.000577
-Warning: there may be numerical errors.
-Elapsed time is 6.166411 seconds.
+gamma1: 29.924753
+Elapsed time is 5.981747 seconds.
 
 Tring deg 9... A feasible solution is found:
-gamma1: 0.000792
-Warning: there may be numerical errors.
-Elapsed time is 7.654199 seconds.
+gamma1: 29.696438
+Elapsed time is 7.388329 seconds.
 
-Tring deg 10... No solution is found.
-Elapsed time is 9.611014 seconds.
+Tring deg 10... A feasible solution is found:
+gamma1: 29.613500
+Elapsed time is 9.178738 seconds.
 
-Tring deg 11... No solution is found.
-Elapsed time is 11.742462 seconds.
+Tring deg 11... A feasible solution is found:
+gamma1: 29.531212
+Elapsed time is 11.239860 seconds.
 
-Tring deg 12... No solution is found.
-Elapsed time is 14.560359 seconds.
+Tring deg 12... A feasible solution is found:
+gamma1: 29.468073
+Elapsed time is 13.659774 seconds.
 =====================================
 ===============gamma2=================
 
 Tring deg 2 ...No solution is found.
-Elapsed time is 0.591178 seconds.
+Elapsed time is 0.520185 seconds.
 
-Tring deg 3 ...A feasible solution is found:
-gamma2: 71.240500
-Elapsed time is 1.190801 seconds.
+Tring deg 3 ...No solution is found.
+Elapsed time is 1.119693 seconds.
 
 Tring deg 4 ...No solution is found.
-Elapsed time is 1.888576 seconds.
+Elapsed time is 1.796589 seconds.
 
 Tring deg 5 ...No solution is found.
-Elapsed time is 2.691495 seconds.
+Elapsed time is 2.564128 seconds.
 
 Tring deg 6 ...No solution is found.
-Elapsed time is 3.688316 seconds.
+Elapsed time is 3.520021 seconds.
 
 Tring deg 7 ...No solution is found.
-Elapsed time is 4.727309 seconds.
+Elapsed time is 4.602156 seconds.
 
 Tring deg 8 ...No solution is found.
-Elapsed time is 6.124618 seconds.
+Elapsed time is 5.821934 seconds.
 
 Tring deg 9 ...No solution is found.
-Elapsed time is 7.602865 seconds.
+Elapsed time is 7.277904 seconds.
 
 Tring deg 10 ...No solution is found.
-Elapsed time is 9.387809 seconds.
+Elapsed time is 9.034337 seconds.
 
 Tring deg 11 ...No solution is found.
-Elapsed time is 11.545400 seconds.
+Elapsed time is 11.209945 seconds.
 
-Tring deg 12 ...A feasible solution is found:
-gamma2: 6.731150
-Elapsed time is 14.087091 seconds.
-=====================================
-%}
+Tring deg 12 ...No solution is found.
+Elapsed time is 13.761918 seconds.
+=====================================%}
