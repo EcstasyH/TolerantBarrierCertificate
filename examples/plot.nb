@@ -4984,7 +4984,7 @@ I0aZ18pOjrJnfB58Frx14fQP3ubBW8Vw5R7/F0ZjH94=\
 \>", "ImageResolution" -> \
 144.],ExpressionUUID->"7135c3fa-b786-4141-8f8d-a85cb3eaae1a"]
 }, Closed]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -9157,7 +9157,7 @@ S(\\\\\\\\mathbf x)\\\", \\\"state\\\" -> \
  CellLabel->
   "Out[249]=",ExpressionUUID->"76dd6a32-6073-4884-aba6-5cc737a276b8"]
 }, Closed]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -9185,7 +9185,7 @@ WindowSize->{1440, 847},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"12.2 for Mac OS X x86 (64-bit) (2020\:5e7412\:670812\:65e5)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"f49f0207-f7ae-4f17-8069-8d3a83c7f452"
+ExpressionUUID->"7e41a65a-ad98-46dc-bcc3-ced56214f5e7"
 ]
 (* End of Notebook Content *)
 
@@ -9210,16 +9210,16 @@ Cell[CellGroupData[{
 Cell[2794, 94, 9530, 251, 606, "Input",ExpressionUUID->"99db4e7b-1d4a-4565-b6c9-d3c2be142bbd"],
 Cell[12327, 347, 280602, 4637, 378, 238478, 3945, "CachedBoxData", "BoxData", "Output",ExpressionUUID->"7135c3fa-b786-4141-8f8d-a85cb3eaae1a"]
 }, Closed]]
-}, Closed]],
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[292978, 4990, 223, 3, 38, "Subsection",ExpressionUUID->"caa7cbcd-6d77-4dff-a042-f43b7897ca3d"],
+Cell[292978, 4990, 223, 3, 54, "Subsection",ExpressionUUID->"caa7cbcd-6d77-4dff-a042-f43b7897ca3d"],
 Cell[CellGroupData[{
 Cell[293226, 4997, 11643, 303, 719, "Input",ExpressionUUID->"2d7a76e7-7740-4992-871c-fa91e2fe940f"],
 Cell[304872, 5302, 210654, 3855, 372, "Output",ExpressionUUID->"76dd6a32-6073-4884-aba6-5cc737a276b8"]
 }, Closed]]
-}, Closed]],
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[515575, 9163, 209, 4, 38, "Subsection",ExpressionUUID->"932ffbcc-6ea5-4390-9f25-ba2043c23b36"],
+Cell[515575, 9163, 209, 4, 54, "Subsection",ExpressionUUID->"932ffbcc-6ea5-4390-9f25-ba2043c23b36"],
 Cell[515787, 9169, 424, 10, 30, "Input",ExpressionUUID->"ba1da258-6369-4def-b208-6e72054348d6"]
 }, Open  ]]
 }, Open  ]]
